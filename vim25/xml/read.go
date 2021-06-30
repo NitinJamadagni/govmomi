@@ -680,7 +680,7 @@ func copyValue(dst reflect.Value, src []byte) (err error) {
 			dst.SetInt(0)
 			return nil
 		}
-		itmp, err := strconv.ParseInt(strings.TrimSpace(string(src)), 10, dst.Type().Bits())
+		itmp, err := strconv.ParseInt(strings.TrimSpace(string(src)), 10, 64)
 		if err != nil {
 			return err
 		}
